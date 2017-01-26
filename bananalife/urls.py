@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from ledctrl import views as mv
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', mv.index, name='index'),
+    url(r'^handle_led',mv.handle_led,name='handle_led'),
+    url(r'^test', mv.test, name='test'),
+    url(r'^get_color', mv.get_color, name='get_color'),
 ]

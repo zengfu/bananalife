@@ -25,7 +25,7 @@ SECRET_KEY = '$hu3gm^@#ocnm91w686va_iwjq7e2!(!__v&hzt!)z^*9%^c5d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["www.bananalife.top"]
+ALLOWED_HOSTS = ["www.bananalife.top","127.0.0.1"]
 
 
 # Application definition
@@ -121,3 +121,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT=os.path.join(BASE_DIR,'static')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, './ledctrl/static'),
+)
