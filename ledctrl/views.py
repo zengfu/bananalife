@@ -76,7 +76,7 @@ def get_color(request):
             'cmd': 0
         }
         print data
-        mqtt.client.publish('/mytopic', json.dumps(data))
+        mqtt.client.publish('/mytopic', json.dumps(data), qos=1)
 
         return HttpResponse("ok")
     else:
