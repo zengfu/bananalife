@@ -6,88 +6,48 @@
     <title>BananaLife</title>
 
     <script src="{% static "js/jquery-3.1.1.js" %}"></script>
+    <script src="{% static "js/pgwmenu.min.js" %}"></script>
+    <script src="{% static "js/jssor.slider-22.1.8.min.js" %}"></script>
+     <script src="{% static "js/bootstrap.js" %}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" href="{% static "img/banana.jpg" %}"/>
-    {% block link %}
-    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap-theme.css" />
-    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="../static/css/my.css" />
-    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/pgwmenu.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-theme.css" %}" />
 
 </head>
 
-<body>
+<body style="padding:0px; margin:0px; background-color:#fff;font-family:'Open Sans',sans-serif,arial,helvetica,verdana">
 {% block head %}
 {% endblock %}
 {% block navigate %}
+    <form method="get">
+    <table style="width: 100%">
+        <tr style="height: 56px;vertical-align: middle">
+            <td style="font-size: 30px;width: 30%;text-align: center">BananaLife</td>
+            <td style="width:40%"><input type="text" style="height: 36px;width: 100%" placeholder="Search" name="search"></td>
+            <td style="width: 10%;text-align: center"><button type="submit" style="height: 36px;width: 80px;background-color:#f0f0f0;border: 0px;font-weight: bolder">Search</button></td>
+            <td style="width: 20%"></td>
+        </tr>
+    </table>
+    </form>
     <div>
+		<ul class="pgwMenu light">
+			<li><a href="{% url 'index' %}">Home</a></li>
+			<li><a href="#">Project</a></li>
+			<li><a href="#">Database</a></li>
+			<li><a href="#">Tools</a></li>
+			<li><a href="http://wiki.bananalife.top">Wiki</a></li>
+			<li><a href="#">Team</a></li>
+		</ul>
+	</div>
 
-
-        <div style="height: 10px" class="row"></div>
-
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-2">
-                <a href="{% url "index" %}">
-                    <img src="{% static "img/bananalife.png" %}" style="height: 36px">
-                </a>
-            </div>
-
-            <form role="search">
-                    <div >
-                        <input type="text"  placeholder="Search" class="col-sm-5" style="border: 2px solid #EE950A;height: 36px;outline: none;margin-right: 10px">
-                        <ul class="nav nav-pills">
-                            <li class="dropdown all-camera-dropdown" >
-                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="height: 36px;font-size: 16px;color: #EE950A">
-                                   Search
-                                   <b class="caret"></b>
-                               </a>
-                            <ul class="dropdown-menu" style="min-width: 94px">
-                                <li>
-                                    <input type="submit" value="" style="background: url(/../static/img/banana36x36.png) center no-repeat" class="search-img" data-toggle="tab">
-                                 </li>
-                                <li >
-                                    <input type="submit" value="" style="background: url(/../static/img/baidu_34x34.png) center no-repeat" class="search-img" data-toggle="tab">
-                                </li>
-                                <li >
-                                    <input type="submit" value="" style="background: url(/../static/img/Bing_34x34.png) center no-repeat" class="search-img" data-toggle="tab">
-                                </li>
-                                <li >
-                                    <input type="submit" value="" style="background: url(/../static/img/github_34x34.png) center no-repeat" class="search-img" data-toggle="tab">
-                                </li>
-                                <li >
-                                    <input type="submit" value="" style="background: url(/../static/img/stackoverflow_34x34.png) center no-repeat" class="search-img" data-toggle="tab">
-                                </li>
-
-
-                            </ul>
-                            </li>
-                        </ul>
-                    </div>
-
-
-
-
-            </form>
-
-
-        </div>
-        <div style="height: 10px" class="row"></div>
-
-        <div style="background-color: #c55704" class="row">
-            <div class="col-sm-1 col-sm-offset-1" style="height: 36px">
-                <a style="font-size: 20px" class="nav_items">
-                    Home
-                </a>
-            </div>
-
-        </div>
-    </div>
 
 <script type="text/javascript">
+$('.pgwMenu').pgwMenu();
     $(document).ready(function () {
-        $('.dropdown-toggle').dropdown();
+
     });
 </script>
 
@@ -96,13 +56,8 @@
 
 {% block body %}
 {% endblock %}
-
-<input type="text"  placeholder="Search" class="col-sm-3" style="border: 2px solid #EE950A;height: 36px;outline: none;margin-right: 10px">
-                <input type="submit" value="ALL" style="color: #EE950A;height: 36px;width:auto;border-radius: 25px;outline: none;font-weight:bold;" class="col-sm-1"  >
-                <input type="submit" value="" style="background-image: url(/../static/img/github_34x34.png);width:36px;height:36px;border: 1px solid white;outline: none" class="col-sm-1">
-                <input type="submit" value="" style="background-image: url(/../static/img/Bing_34x34.png);width:36px;height:36px;border: 1px solid white;border-radius: 15px;outline: none" class="col-sm-1">
-                <input type="submit" value="" style="background-image: url(/../static/img/baidu_34x34.png);width:36px;height:36px;border: 1px solid white;border-radius: 15px;outline: none" class="col-sm-1">
-                <input type="submit" value="" style="background-image: url(/../static/img/stackoverflow_34x34.png);width:36px;height:36px;border: 1px solid white;border-radius: 15px;outline: none" class="col-sm-1">
-
+{% block font %}
+    <p style="text-align: center"> ----------------------------------</p>
+{% endblock %}
 </body>
 </html>

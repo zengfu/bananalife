@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+    <div class="container">
+    <div class="row">
+
+    <div class="col-sm-6">
+    <h2>Bing Search Nums:{{len_bing }}</h2>
+    {% autoescape off %}
+
+
+    {% for i in bing %}
+        <div>
+            <a href={{ i.ref }} target="_blank"><P style="font-size: 16px">{{i.des}}</P></a>
+        </div>
+    {% endfor %}
+    </div>
+        <div class="col-sm-6">
+        <h2>Zhihu Search Nums:{{ len_zhi }}</h2>
+        {% for i in zhihu %}
+        <div>
+            <a href={{ i.ref }} target="_blank"><P style="font-size: 16px">{{i.des}}</P></a>
+        </div>
+        {% endfor %}
+        </div>
+    {% endautoescape %}
+    </div>
+    <h2>You can try these ways below, Click!</h2>
+    <div class="row">
+        <a class="col-sm-offset-4 col-sm-1" href="{{ sd.google }}"><p style="font-weight: bolder">Google</p></a>
+        <a class=" col-sm-1" href="{{ sd.github }}"><p style="font-weight: bolder">Github</p></a>
+        <a class=" col-sm-1" href="{{ sd.weibo }}"><p style="font-weight: bolder">Weibo</p></a>
+        <a class=" col-sm-1" href="{{ sd.quora }}"><p style="font-weight: bolder">Quora</p></a>
+    </div>
+    </div>
+{% endblock %}
