@@ -32,7 +32,7 @@ def bing(url):
     request = urllib2.Request(url, headers=headers)
     response = urllib2.urlopen(request)
     html = response.read()
-    soup = BeautifulSoup(html, 'lxml')
+    soup = BeautifulSoup(html)
     content = soup.select('.b_algo h2')
     res=[]
     for i in content:
@@ -53,7 +53,7 @@ def zhihu(url):
     request = urllib2.Request(url,headers=headers)
     response = urllib2.urlopen(request)
     html=response.read()
-    soup=BeautifulSoup(html,'lxml')
+    soup=BeautifulSoup(html)
     content=soup.select('.title')
     res=[]
     for i in content:
