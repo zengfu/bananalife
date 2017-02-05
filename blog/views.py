@@ -7,12 +7,13 @@ import mistune
 # Create your views here.
 
 
-def blog(request):
+def blog(request,page):
     markdown=mistune.Markdown()
-    blog_list = BlogsPost.objects.all()
+    blog_list = BlogsPost.objects.order_by('-timestamp')
+    length=len(blog_list)
+    pages=length/6
+    page = int(page)
+    blog_list=blog_list[(page-1)*6:page*6]
     for num,i in enumerate(blog_list):
-        print len(i.body)
-        #blog_list[num].body=i.body.replace('\n','</br>')
-        #blog_list[num].body = i.body.replace(' ', '&nbsp')
         blog_list[num].body=markdown(i.body)
-    return render(request,'blog.html',{'posts':blog_list})
+    return render(request,'blog.html',{'posts':blog_list,'pages':range(pages+1),'id':page})

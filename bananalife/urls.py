@@ -25,5 +25,5 @@ urlpatterns = [
     url(r'^handle_led',mv.handle_led,name='handle_led'),
     url(r'^test', mv.test, name='test'),
     url(r'^get_color', mv.get_color, name='get_color'),
-    url(r'^blog/', blog.blog, name='blog'),
+    url(r'^blog/(\d*)', blog.blog, name='blog'),
 ]

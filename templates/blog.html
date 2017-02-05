@@ -6,12 +6,21 @@
                 {% for post in posts %}
                     <h1>{{ post.title }}</h1>
                     <p>{{ post.timestamp }}</p>
-                    <p>{{ post.body }}</p>
                 {% endfor%}
 
+            <div class="row" style="text-align: center">
+                <ul class="pagination pagination-sm" >
+                    <li><a href="#">&laquo;</a></li>
+                    {% for page in pages %}
+                        <li><a href="/blog/{{ page|add:1 }}">{{page|add:1}}</a></li>
+                    {% endfor %}
+                     <li><a href="#">&raquo;</a></li>
+                </ul>
+            </div>
         </div>
     {% endautoescape %}
     <script type="text/javascript">
         $('.pgwMenu a').eq(3).addClass('selected');
+        $('.pagination li').eq({{ id }}).addClass('active')
     </script>
 {% endblock %}
