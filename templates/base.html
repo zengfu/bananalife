@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% block head %}
 <head>
     {% load static  %}
     <meta charset="UTF-8">
@@ -17,12 +18,11 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-theme.css" %}" />
 
 </head>
-
-<body style="padding:0px; margin:0px; background-color:#fff;font-family:'Open Sans',sans-serif,arial,helvetica,verdana">
-{% block head %}
 {% endblock %}
+<body style="padding:0px; margin:0px; background-color:#fff;font-family:'Open Sans',sans-serif,arial,helvetica,verdana">
+
 {% block navigate %}
-    <form method="get">
+    <form method="get" action="/">
     <table style="width: 100%">
         <tr style="height: 56px;vertical-align: middle">
             <td style="font-size: 30px;width: 30%;text-align: center">BananaLife</td>
@@ -36,6 +36,7 @@
 		<ul class="pgwMenu light">
 			<li><a href="{% url 'index' %}">Home</a></li>
 			<li><a href="#">Project</a></li>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
 			<li><a href="#">Database</a></li>
 			<li><a href="#">Tools</a></li>
 			<li><a href="http://wiki.bananalife.top">Wiki</a></li>

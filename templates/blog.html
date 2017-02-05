@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body %}
+    {% load static %}
+    {% autoescape off %}
+        <div class="container">
+                {% for post in posts %}
+                    <h1>{{ post.title }}</h1>
+                    <p>{{ post.timestamp }}</p>
+                    <p>{{ post.body }}</p>
+                {% endfor%}
+
+        </div>
+    {% endautoescape %}
+    <script type="text/javascript">
+        $('.pgwMenu a').eq(3).addClass('selected');
+    </script>
+{% endblock %}

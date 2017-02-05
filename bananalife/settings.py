@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
+    'django_markdown',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -124,4 +126,5 @@ STATIC_ROOT=os.path.join(BASE_DIR,'static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, './ledctrl/static'),
     os.path.join(BASE_DIR, './bananalife/static'),
+    os.path.join(BASE_DIR, './blog/static'),
 )

@@ -17,10 +17,13 @@ from django.conf.urls import url
 from django.contrib import admin
 from ledctrl import views as mv
 from . import views as root
+import blog.views as blog
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', root.index, name='index'),
     url(r'^handle_led',mv.handle_led,name='handle_led'),
     url(r'^test', mv.test, name='test'),
     url(r'^get_color', mv.get_color, name='get_color'),
+    url(r'^blog/', blog.blog, name='blog'),
 ]
