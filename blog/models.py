@@ -11,4 +11,9 @@ class BlogsPost(models.Model):
     timestamp = models.DateTimeField()
 class BlogPostAdmin(admin.ModelAdmin):
     list_display = ('title','timestamp')
+
+class imgds(models.Model):
+    img = models.ImageField(blank=True, upload_to='img/',default=None)
+
 admin.site.register(BlogsPost,BlogPostAdmin)
+admin.site.register(imgds)

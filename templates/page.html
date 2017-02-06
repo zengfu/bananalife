@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block body %}
+    {% load static %}
+    {% autoescape off %}
+    <div class="container">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.timestamp }}</p>
+        <p>{{ post.body }}</p>
+    </div>
+    {% endautoescape %}
+
+{% endblock %}

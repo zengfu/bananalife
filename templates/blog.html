@@ -4,8 +4,24 @@
     {% autoescape off %}
         <div class="container">
                 {% for post in posts %}
-                    <h1>{{ post.title }}</h1>
-                    <p>{{ post.timestamp }}</p>
+                    <div class="row" style="border: 20px;margin: 20px">
+                        <div class="col-sm-2" ><img id="img-{{ post.id }}"src="{% static 'img/logo.png' %}" class="img-circle" style="height: 80px"></div>
+                        <div class="col-sm-10">
+                            <a href="/page/{{ post.id }}"><h2>{{ post.title }}</h2></a>
+                            <p>{{ post.timestamp }}</p>
+                            <div style="overflow: hidden;text-overflow:ellipsis;height: 40px" class="des{{ post.id }}">{{ post.body }}</div>
+                            <script type="application/javascript">
+
+
+                                $('.des{{ post.id }}').html(delHtmlTag({{ post.body }}));
+                                function delHtmlTag(str){
+                                    //alert("d");
+                                    return str.replace(/<[^>]+>/g,"");
+                                }
+                            </script>
+
+                        </div>
+                    </div>
                 {% endfor%}
 
             <div class="row" style="text-align: center">
@@ -21,6 +37,12 @@
     {% endautoescape %}
     <script type="text/javascript">
         $('.pgwMenu a').eq(3).addClass('selected');
-        $('.pagination li').eq({{ id }}).addClass('active')
+        $('.pagination li').eq({{ id }}).addClass('active');
+
+
+        $(document).ready(
+        )
+
+
     </script>
 {% endblock %}
