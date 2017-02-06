@@ -28,6 +28,7 @@ from django.views.static import serve
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', root.index, name='index'),
+    url(r'^admin_login/', root.ctl, name='admin'),
     url(r'^handle_led',mv.handle_led,name='handle_led'),
     url(r'^test', mv.test, name='test'),
     url(r'^get_color', mv.get_color, name='get_color'),

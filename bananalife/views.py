@@ -7,7 +7,8 @@ import re
 import urllib2
 from bs4 import BeautifulSoup
 
-
+def ctl(request):
+    return HttpResponseRedirect("/admin")
 def index(request):
     if 'search' in request.GET:
         result = request.GET['search'].encode('utf8')
