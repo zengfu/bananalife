@@ -4,6 +4,7 @@
     <title>{{ post.title }}</title>
 {% endblock %}
 {% block body %}
+    <img id="share_img" src="" style="position:absolute;width:0;height:0;z-index:-1">
 
     {% autoescape off %}
     <div class="container">
@@ -12,7 +13,21 @@
             <p style="font-weight: bold" class="col-sm-2">{{ post.timestamp }}</p>
             <p class="col-sm-offset-1 col-sm-2"><strong>Author</strong>:  {{ post.author }}</p>
         </div>
-        <p>{{ post.body }}</p>
+        <div id="tmp">{{ post.body }}</div>
+        <script>
+            var img=$('#tmp').find('img').attr('src');
+                                if (typeof(img) == "undefined")
+                                {
+                                    $('#share_img').attr('src','{% static 'img/logo.png' %}');
+                                }
+                                else
+                                {
+                                     img=img.replace("\\\"","");
+                                    img=img.replace("\\\"","");
+                                    //console.log(img);
+                                    $('#share_img').attr('src',img);
+                                }
+        </script>
         <div class="bdsharebuttonbox">
             <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
             <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
