@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title>{{ post.title }}</title>
+{% endblock %}
 {% block body %}
-    {% load static %}
+
     {% autoescape off %}
     <div class="container">
         <h1 >{{ post.title }}</h1>

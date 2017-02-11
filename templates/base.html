@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-{% block head %}
 <head>
     {% load static  %}
     <meta charset="UTF-8">
-    <title>BananaLife</title>
-
+    {% block title %}
+        <title>BananaLife</title>
+    {% endblock %}
     <script src="{% static "js/jquery-3.1.1.js" %}"></script>
     <script src="{% static "js/pgwmenu.min.js" %}"></script>
     <script src="{% static "js/jssor.slider-22.1.8.min.js" %}"></script>
@@ -23,7 +23,6 @@
         a:active {text-decoration: none;}	/* 正在被点击的链接 */
     </style>
 </head>
-{% endblock %}
 <body style="padding:0px; margin:0px; background-color:#fff;font-family:Arial,sans-serif,arial,helvetica,verdana">
 
 {% block navigate %}
