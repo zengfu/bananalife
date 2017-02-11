@@ -9,7 +9,7 @@ class BlogsPost(models.Model):
     title = models.CharField(max_length = 150)
     body = models.TextField()
     timestamp = models.DateTimeField()
-    author = models.CharField(max_length = 150,default='zengfu')
+    author = models.CharField(max_length = 100,default='zengfu')
 class BlogPostAdmin(admin.ModelAdmin):
     list_display = ('title','timestamp')
 
