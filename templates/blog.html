@@ -6,12 +6,13 @@
         <div class="container">
                 {% for post in posts %}
                     <div class="row" style="border: 20px;margin: 20px;background-color: #f0f0f0;border-radius: 20px">
-                        <div class="col-sm-2" style="height: 150px;line-height: 150px;vertical-align: middle;text-align: center"><img id="img-{{ post.id }}" class="img-circle" style="height: 100px;width:100px"></div>
+                        <div class="col-sm-2" style="height: 170px;line-height: 170px;vertical-align: middle;text-align: center"><img id="img-{{ post.id }}" class="img-circle" style="height: 100px;width:100px"></div>
                         <div class="col-sm-10">
-                            <a href="/page/{{ post.id }}"><h2>{{ post.title }}</h2></a>
-                            <p style="font-weight: bold">{{ post.timestamp }}</p>
-                            <p><strong>Author</strong>:  {{ post.author }}</p>
-                            <div style="overflow: hidden;text-overflow:ellipsis;height: 40px" class="des{{ post.id }}">{{ post.body }}</div>
+                            <a href="/page/{{ post.id }}" ><h2>{{ post.title }}</h2></a>
+                            <p style="font-weight: bold" >{{ post.timestamp }}</p>
+                            <div ><strong>Viewed:</strong> {{ post.view }}</div>
+                            <div ><strong>Author</strong>:  {{ post.author }}</div>
+                            <div style="overflow: hidden;text-overflow:ellipsis;height: 42px;color: darkblue;font-weight:bold;margin: 5px" class="des{{ post.id }}">{{ post.body }}</div>
                             <script type="application/javascript">
                                 var img=$('.des{{ post.id }}').find('img').attr('src');
                                 if (typeof(img) == "undefined")
