@@ -23,6 +23,8 @@ def blog(request,page):
 def post(request,num):
     markdown = mistune.Markdown()
     article=BlogsPost.objects.filter(id=num)
+    view=article[0].view
+    article.update(view=view+1)
     if article:
         a=article[0].body
         article[0].body=markdown(a)

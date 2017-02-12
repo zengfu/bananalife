@@ -11,10 +11,14 @@
 
     {% autoescape off %}
     <div class="container">
-        <h1 >{{ post.title }}</h1>
+        <div class="row">
+            <h1 class="col-sm-4">{{ post.title }}</h1>
+        </div>
+
         <div class="row">
             <p style="font-weight: bold" class="col-sm-2">{{ post.timestamp }}</p>
             <p class="col-sm-offset-1 col-sm-2"><strong>Author</strong>:  {{ post.author }}</p>
+            <p class="col-sm-2"><strong>Viewed:</strong>:  {{ post.view }}</p>
         </div>
         <div id="tmp">{{ post.body }}</div>
         <script>

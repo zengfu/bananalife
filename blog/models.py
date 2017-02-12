@@ -10,6 +10,7 @@ class BlogsPost(models.Model):
     body = models.TextField()
     timestamp = models.DateTimeField()
     author = models.CharField(max_length = 100,default='zengfu')
+    view=models.IntegerField(default=0)
 class BlogPostAdmin(admin.ModelAdmin):
     list_display = ('title','timestamp')
 
