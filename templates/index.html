@@ -2,41 +2,7 @@
 {% block navigate1 %}
 
 {% endblock %}
-{% block navigate2 %}
-    <div>
-		<ul class="pgwMenu light">
-			<li><a href="{% url 'index' %}" style="font-weight: bolder;font-style: italic">Bananalife</a></li>
-			<li><a href="#">Project</a></li>
-            <li><a href="{% url 'blog' 1%}">Blog</a></li>
-			<li><a href="#">Database</a></li>
-			<li><a href="#">Tools</a></li>
-			<li><a href="http://wiki.bananalife.top">Wiki</a></li>
-			<li><a href="#">Team</a></li>
-		</ul>
 
-        <div style="position:absolute;top:0px;left:55%;text-align: right;height: 40px;width:40%;line-height:40px;vertical-align: middle;font-size: 16px">
-
-            <a href="#"><span class="glyphicon glyphicon-search" style="width:25px;text-align: center"></span></a>
-
-            {% if request.user.is_authenticated %}
-                <a href="{% url 'admin' %}" ><span class="glyphicon glyphicon-user" style="width: 25px"></span></a>
-            {% else %}
-                <a href="{% url 'admin' %}" ><span class="glyphicon glyphicon-log-in" style="width:25px "></span></a>
-            {% endif %}
-        </div>
-
-	</div>
-
-
-<script type="text/javascript">
-$('.pgwMenu').pgwMenu();
-    $(document).ready(function () {
-
-    });
-</script>
-
-
-{% endblock %}
 {% block body %}
     {% load static %}
     <script type="text/javascript">
@@ -56,21 +22,48 @@ $('.pgwMenu').pgwMenu();
 
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:700px;overflow:hidden;" id="slide">
             <script>
-                $('#jssor_1').height($(window).height()-32);
+                i=0;
+
+                $('#jssor_1').height($(window).height()-40);
                     $('#jssor_1').width($(window).width());
-                    $('#slide').height($(window).height()-32);
+                    $('#slide').height($(window).height()-40);
                     $('#slide').width($(window).width());
 
                 $(window).resize(function () {
                     location.reload();
                 })
 
+                $('#search_icon').click(function () {
 
+                    i++;
+                    if(i%2)
+                    {
+                        $('#mysearch').hide();
+                    }
+                    else
+                         $('#mysearch').show();
+
+                })
             </script>
 
 
             <div>
                 <img data-u="image" src="{% static "img/line.jpg" %}" />
+                <div style="position: absolute;top: 100px;left: 0px;width: 100%" id="mysearch">
+                    <form method="get" action="/">
+                        <div style="width: 100%;padding-right: 15px;padding-left: 15px;padding: 15px">
+                            <div class="row" >
+                            <div class="col-sm-2 " style="color: white;font-size: 36px;text-align:center;vertical-align: middle;line-height: 36px">BananaLife</div>
+                            <div class="col-sm-4 " style="vertical-align: middle;height: 40px;line-height: 40px;">
+                                <input type="text" style="height: 40px;width: 100%;float: right" placeholder="Search" name="search">
+                            </div>
+                            <div class="col-sm-1" style="text-align: center;height: 40px"><button type="submit" style="height: 40px;line-height:40px;vertical-align:middle;width: 80px;background-color:#f0f0f0;border: 0px;font-weight: bolder;padding-right: 0px;padding-left: 0px;">Search</button></div>
+                                </div>
+                        </div>
+
+
+                </form>
+                </div>
             </div>
         </div>
 <!-- Bullet Navigator

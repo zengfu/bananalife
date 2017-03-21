@@ -58,13 +58,22 @@
     text-decoration: none;
     font-size: 16px;
 }
+.pgwMenu a:link { text-decoration: none;color:white;}		/* 未被访问的链接 */
+.pgwMenu a:visited { text-decoration: none;color:white;}	/* 已被访问的链接 */
+.pgwMenu a:hover { text-decoration: none;color:white;}	/* 鼠标指针移动到链接上 */
+.pgwMenu a:active {text-decoration: none;color:white;}	/* 正在被点击的链接 */
+
+.mynav a:link { text-decoration: none;color:white;}		/* 未被访问的链接 */
+.mynav a:visited { text-decoration: none;color:white;}	/* 已被访问的链接 */
+.mynav a:hover { text-decoration: none;color:white;}	/* 鼠标指针移动到链接上 */
+.mynav a:active {text-decoration: none;color:white;}	/* 正在被点击的链接 */
 
 .pgwMenu.light a {
     color: #000;
 }
 
 .pgwMenu a.selected {
-    background: #777;
+    background: #0f0f0f;
 }
 
 .pgwMenu.light a.selected {
