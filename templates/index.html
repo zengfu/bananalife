@@ -1,4 +1,42 @@
 {% extends 'base.html' %}
+{% block navigate1 %}
+
+{% endblock %}
+{% block navigate2 %}
+    <div>
+		<ul class="pgwMenu light">
+			<li><a href="{% url 'index' %}" style="font-weight: bolder;font-style: italic">Bananalife</a></li>
+			<li><a href="#">Project</a></li>
+            <li><a href="{% url 'blog' 1%}">Blog</a></li>
+			<li><a href="#">Database</a></li>
+			<li><a href="#">Tools</a></li>
+			<li><a href="http://wiki.bananalife.top">Wiki</a></li>
+			<li><a href="#">Team</a></li>
+		</ul>
+
+        <div style="position:absolute;top:0px;left:80%;text-align: right;;height: 40px;width:15%;line-height:40px;vertical-align: middle;font-size: 16px">
+
+            <a href="#"><span class="glyphicon glyphicon-search" style="width:30%;text-align: center"></span></a>
+
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'admin' %}"><span class="glyphicon glyphicon-user" ></span>  {{request.user }}</a>
+            {% else %}
+                <a href="{% url 'admin'  %}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+            {% endif %}
+        </div>
+
+	</div>
+
+
+<script type="text/javascript">
+$('.pgwMenu').pgwMenu();
+    $(document).ready(function () {
+
+    });
+</script>
+
+
+{% endblock %}
 {% block body %}
     {% load static %}
     <script type="text/javascript">
@@ -9,28 +47,35 @@
         .jssorb05{position:absolute}.jssorb05 div,.jssorb05 div:hover,.jssorb05 .av{position:absolute;width:16px;height:16px;background:url('{% static "img/b05.png" %}') no-repeat;overflow:hidden;cursor:pointer}.jssorb05 div{background-position:-7px -7px}.jssorb05 div:hover,.jssorb05 .av:hover{background-position:-37px -7px}.jssorb05 .av{background-position:-67px -7px}.jssorb05 .dn,.jssorb05 .dn:hover{background-position:-97px -7px}.jssora22l,.jssora22r{display:block;position:absolute;width:40px;height:58px;cursor:pointer;background:url('{% static "img/a22.png" %}') center center no-repeat;overflow:hidden}.jssora22l{background-position:-10px -31px}.jssora22r{background-position:-70px -31px}.jssora22l:hover{background-position:-130px -31px}.jssora22r:hover{background-position:-190px -31px}.jssora22l.jssora22ldn{background-position:-250px -31px}.jssora22r.jssora22rdn{background-position:-310px -31px}.jssora22l.jssora22lds{background-position:-10px -31px;opacity:.3;pointer-events:none}.jssora22r.jssora22rds{background-position:-70px -31px;opacity:.3;pointer-events:none}
     </style>
 
-    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:400px;overflow:hidden;visibility: hidden">
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:700px;overflow:hidden;visibility: hidden">
     <!-- Loading Screen -->
         <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
             <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
             <div style="position:absolute;display:block;background:url({% static 'img/loading.gif' %}) no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
-        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:400px;overflow:hidden;">
-            <div>
-                <img data-u="image" src="{% static "img/door.jpg" %}" />
-                <div style="position:absolute;top:30px;left:30px;width:480px;height:120px;z-index:0;font-size:50px;color:#ffffff;line-height:60px;">TOUCH SWIPE SLIDER</div>
-                <div style="position:absolute;top:250px;left:30px;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">Build your slider with anything, includes image, content, text, html, photo, picture</div>
-            </div>
-            <div>
-                <img data-u="image" src="{% static "img/bike.jpg" %}" />
-            </div>
+
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:700px;overflow:hidden;" id="slide">
+            <script>
+                $('#jssor_1').height($(window).height()-32);
+                    $('#jssor_1').width($(window).width());
+                    $('#slide').height($(window).height()-32);
+                    $('#slide').width($(window).width());
+
+                $(window).resize(function () {
+                    location.reload();
+                })
+
+
+            </script>
+
+
             <div>
                 <img data-u="image" src="{% static "img/3.jpg" %}" />
             </div>
         </div>
-<!-- Bullet Navigator -->
+<!-- Bullet Navigator
         <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
-<!-- bullet navigator item prototype -->
+
             <div data-u="prototype" style="width:16px;height:16px;"></div>
         </div>
 <!-- Arrow Navigator -->
@@ -41,151 +86,8 @@
         jssor_1_slider_init();
         $('.pgwMenu a').eq(1).addClass('selected');
     </script>
-    <div style="background-color:#f0f0f0;width: 100%;height: 36px;"></div>
-    <div class="container">
-        <div class="row">
-            <h1 class="col-sm-12" style="text-align: center;font-weight: bolder">Project</h1>
-        </div>
-        <div class="row">
-            <div class="col-sm-2" style="text-align: center">
-                <a href="#">
-                    <h2>
-                        <span class="glyphicon glyphicon-tasks"></span>
-                    </h2>
-                </a>
-            </div>
-            <div class="col-sm-9 col-sm-offset-1">
-                <p style="font-size: 24px">
-                    The Project Replaces Mainly Directions</br>
-                    MCU, IOT, LINUX......
-                </p>
-            </div>
-        </div>
-    </div>
-    <div style="background-color:#f0f0f0;width: 100%;height: 36px;"></div>
-    <div class="container">
-        <div class="row">
-            <h1 class="col-sm-12" style="text-align: center;font-weight: bolder">Blog</h1>
-        </div>
-        <div class="row">
-            <div class="col-sm-2" style="text-align: center">
-                <a href="#">
-                    <h2>
-                        <span class="glyphicon glyphicon-user"></span>
-                    </h2>
-                </a>
-            </div>
-            <div class="col-sm-9 col-sm-offset-1">
-                <p style="font-size: 24px">
-                   Studying Blog</br>
-                   Record Knowledge And Share!
-                </p>
-            </div>
-        </div>
-    </div>
-    <div style="background-color:#f0f0f0;width: 100%;height: 36px;"></div>
-    <div class="container">
-        <div class="row">
-            <h1 class="col-sm-12" style="text-align: center;font-weight: bolder">Database</h1>
-        </div>
-        <div class="row">
-            <div class="col-sm-2" style="text-align: center">
-                <a href="#">
-                    <h2>
-                        <span class="glyphicon glyphicon-hdd"></span>
-                    </h2>
-                </a>
-            </div>
-            <div class="col-sm-9 col-sm-offset-1">
-                <p style="font-size: 24px">
-                    The Database Contains</br>
-                    Datasheets, Description And Some Reference Designs.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div style="background-color:#f0f0f0;width: 100%;height: 36px;"></div>
-    <div class="container">
-        <div class="row">
-            <h1 class="col-sm-12" style="text-align: center;font-weight: bolder">Tools</h1>
-        </div>
-        <div class="row">
-            <div class="col-sm-2" style="text-align: center">
-                <a href="#">
-                    <h2>
-                        <span class="glyphicon glyphicon-wrench"></span>
-                    </h2>
-                </a>
-            </div>
-            <div class="col-sm-9 col-sm-offset-1">
-                <p style="font-size: 24px">
-                    Toolbox</br>
-                    A Magic Box, Light The Passion, Be A Geeker!
-                </p>
-            </div>
-        </div>
-    </div>
-    <div style="background-color:#f0f0f0;width: 100%;height: 36px;"></div>
-    <div class="container">
-        <div class="row">
-            <h1 class="col-sm-12" style="text-align: center;font-weight: bolder">Wiki</h1>
-        </div>
-        <div class="row">
-            <div class="col-sm-2" style="text-align: center">
-                <a href="http://wiki.bananalife.top">
-                    <h2>
-                        <span class="glyphicon glyphicon-education"></span>
-                    </h2>
-                </a>
-            </div>
-            <div class="col-sm-9 col-sm-offset-1">
-                <p style="font-size: 24px">
-                    The Wiki Is Detailed</br>
-                    You Can Find Everything, From Dokuwiki!
-                </p>
-            </div>
-        </div>
-    </div>
-    <div style="background-color:#f0f0f0;width: 100%;height: 36px;"></div>
-    <div class="container">
-        <div class="row">
-            <h1 class="col-sm-12" style="text-align: center;font-weight: bolder">Team</h1>
-        </div>
-        <div class="row">
-            <div class="col-sm-2" style="text-align: center">
-                <a href="#">
-                    <h2>
-                        <span class="glyphicon glyphicon-user"></span>
-                    </h2>
-                </a>
-            </div>
-            <div class="col-sm-9 col-sm-offset-1">
-                <p style="font-size: 24px">
-                    I Know A Good Team</br>
-                    Is The Best Important Element, Welcome To Join Us!
-                </p>
-            </div>
-        </div>
-    </div>
-    <div style="background-color:#f0f0f0;width: 100%;height: 36px;"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12" style="text-align: right">
-                <h3>
-                    Wechat:zengfunuaa<br>
-                    Email:zengfunuaa@126.com
-                </h3>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="col-sm-12" style="text-align: right">
-                <h3>
-                    Wechat:TanHang2014<br>
-                    Email:tanhang12345@126.com
-                </h3>
-            </div>
-        </div>
-    </div>
+    <div style="background-color:#d0d0d0;width: 100%;height: 0px;"></div>
+    {% block font %}
+    {% endblock %}
 {% endblock %}
 

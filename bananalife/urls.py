@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from ledctrl import views as mv
 from . import views as root
 import blog.views as blog
 from django.conf import settings
@@ -29,9 +28,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', root.index, name='index'),
     url(r'^admin_login/', root.ctl, name='admin'),
-    url(r'^handle_led',mv.handle_led,name='handle_led'),
-    url(r'^test', mv.test, name='test'),
-    url(r'^get_color', mv.get_color, name='get_color'),
     url(r'^blog/(\d*)', blog.blog, name='blog'),
     url(r'^page/(\d*)', blog.post, name='page'),
     url(r'^media/(?P<path>.*)$',serve,{'document_root': settings.MEDIA_ROOT})

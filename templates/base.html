@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-theme.css" %}" />
     <style type="text/css">
-        a:link {color:darkred; text-decoration: none;}		/* 未被访问的链接 */
+        a:link {color:black; text-decoration: none;}		/* 未被访问的链接 */
         a:visited { text-decoration: none;}	/* 已被访问的链接 */
         a:hover { text-decoration: none;}	/* 鼠标指针移动到链接上 */
         a:active {text-decoration: none;}	/* 正在被点击的链接 */
@@ -25,7 +25,7 @@
 </head>
 <body style="padding:0px; margin:0px; background-color:#fff;font-family:Arial,sans-serif,arial,helvetica,verdana">
 
-{% block navigate %}
+{% block navigate1 %}
     <form method="get" action="/">
     <table style="width: 100%">
         <tr style="height: 56px;vertical-align: middle">
@@ -46,9 +46,13 @@
         </tr>
     </table>
     </form>
+
+
+{% endblock %}
+{% block navigate2 %}
     <div>
 		<ul class="pgwMenu light">
-			<li><a href="{% url 'index' %}">Home</a></li>
+			<li><a href="{% url 'index' %}" style="font-weight: bolder;font-style: italic">Bananalife</a></li>
 			<li><a href="#">Project</a></li>
             <li><a href="{% url 'blog' 1%}">Blog</a></li>
 			<li><a href="#">Database</a></li>
@@ -65,9 +69,7 @@ $('.pgwMenu').pgwMenu();
 
     });
 </script>
-
 {% endblock %}
-
 
 {% block body %}
 {% endblock %}
