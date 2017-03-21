@@ -14,14 +14,14 @@
 			<li><a href="#">Team</a></li>
 		</ul>
 
-        <div style="position:absolute;top:0px;left:80%;text-align: right;;height: 40px;width:15%;line-height:40px;vertical-align: middle;font-size: 16px">
+        <div style="position:absolute;top:0px;left:70%;text-align: right;;height: 40px;width:25%;line-height:40px;vertical-align: middle;font-size: 16px">
 
-            <a href="#"><span class="glyphicon glyphicon-search" style="width:30%;text-align: center"></span></a>
+            <a href="#"><span class="glyphicon glyphicon-search" style="width:20%;text-align: center"></span></a>
 
             {% if request.user.is_authenticated %}
-                <a href="{% url 'admin' %}"><span class="glyphicon glyphicon-user" ></span>  {{request.user }}</a>
+                <a href="{% url 'admin' %}" style="width:20%"><span class="glyphicon glyphicon-user" ></span>{{request.user }}</a>
             {% else %}
-                <a href="{% url 'admin'  %}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                <a href="{% url 'admin' %}" style="width:20% "><span class="glyphicon glyphicon-log-in"></span>Login</a>
             {% endif %}
         </div>
 
