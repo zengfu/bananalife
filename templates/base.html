@@ -10,12 +10,16 @@
     <script src="{% static "js/pgwmenu.min.js" %}"></script>
     <script src="{% static "js/jssor.slider-22.1.8.min.js" %}"></script>
      <script src="{% static "js/bootstrap.js" %}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" href="{% static "img/logo.png" %}"/>
     <link rel="stylesheet" type="text/css" href="{% static "css/pgwmenu.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-theme.css" %}" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
     <style type="text/css">
         a:link {color:black; text-decoration: none;}		/* 未被访问的链接 */
         a:visited { text-decoration: none;color:black;}	/* 已被访问的链接 */
@@ -57,7 +61,7 @@
 			<li><a href="{% url 'index' %}" style="font-weight: bolder;font-style: italic">Bananalife</a></li>
 			<li><a href="#">Project</a></li>
             <li><a href="{% url 'blog' 1%}">Blog</a></li>
-			<li><a href="#">Database</a></li>
+			<li><a href="{% url 'db' %}">Database</a></li>
 			<li><a href="#">Tools</a></li>
 			<li><a href="http://wiki.bananalife.top">Wiki</a></li>
 			<li><a href="#">Team</a></li>

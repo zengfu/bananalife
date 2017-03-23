@@ -19,6 +19,7 @@ from . import views as root
 import blog.views as blog
 from django.conf import settings
 from django.views.static import serve
+import database.views as db
 
 
 
@@ -30,5 +31,7 @@ urlpatterns = [
     url(r'^admin_login/', root.ctl, name='admin'),
     url(r'^blog/(\d*)', blog.blog, name='blog'),
     url(r'^page/(\d*)', blog.post, name='page'),
+    url(r'^db/', db.db_index, name='db'),
     url(r'^media/(?P<path>.*)$',serve,{'document_root': settings.MEDIA_ROOT})
+
 ]
