@@ -16,6 +16,9 @@ class BlogPostAdmin(admin.ModelAdmin):
 
 class imgds(models.Model):
     img = models.ImageField(blank=True, upload_to='img/',default=None)
+class fileds(models.Model):
+    file=models.FileField(blank=True,upload_to='file/',default=None)
 
 admin.site.register(BlogsPost,BlogPostAdmin)
 admin.site.register(imgds)
+admin.site.register(fileds)
