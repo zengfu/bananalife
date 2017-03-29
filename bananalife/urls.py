@@ -31,7 +31,8 @@ urlpatterns = [
     url(r'^admin_login/', root.ctl, name='admin'),
     url(r'^blog/(\d*)', blog.blog, name='blog'),
     url(r'^page/(\d*)', blog.post, name='page'),
-    url(r'^db/', db.db_index, name='db'),
+    url(r'^db/(\d*)', db.db_index, name='db'),
+    url(r'^db111', db.db_test, name='db'),
     url(r'^media/(?P<path>.*)$',serve,{'document_root': settings.MEDIA_ROOT})
 
 ]

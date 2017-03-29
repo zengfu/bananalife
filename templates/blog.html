@@ -5,7 +5,7 @@
     {% autoescape off %}
         <div class="container">
                 {% for post in posts %}
-                    <div class="row" style="border: 20px;margin: 20px;background-color: #f0f0f0;border-radius: 20px">
+                    <div class="row" style="border: 20px;margin: 20px;margin-left:100px;margin-right:100px;background-color: #f0f0f0;border-radius: 20px;">
                         <div class="col-sm-2" style="height: 170px;line-height: 170px;vertical-align: middle;text-align: center"><img id="img-{{ post.id }}" class="img-circle" style="height: 100px;width:100px"></div>
                         <div class="col-sm-10">
                             <a href="/page/{{ post.id }}" ><h2>{{ post.title }}</h2></a>
@@ -51,14 +51,5 @@
             </div>
         </div>
     {% endautoescape %}
-    <script type="text/javascript">
-        $('.pgwMenu a').eq(3).addClass('selected');
-        $('.pagination li').eq({{ id }}).addClass('active');
 
-
-        $(document).ready(
-        )
-
-
-    </script>
 {% endblock %}

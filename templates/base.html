@@ -51,11 +51,11 @@
         <h1 style="font-size: 40px;font-weight: bolder">BananaLife</h1>
         <div style="background-color: gainsboro">
             <ul id="nav">
-                <li><a href="#">Home</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="#">Project</a></li>
-                <li><a href="#">Database</a></li>
-                <li><a href="#">blog</a></li>
-                <li><a href="#">wiki</a></li>
+                <li><a href="{% url 'db' 1%}">Database</a></li>
+                <li><a href="{% url 'blog' 1 %}">Blog</a></li>
+                <li><a href="http://wiki.bananalife.top">Wiki</a></li>
             </ul>
         </div>
 
