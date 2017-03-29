@@ -21,7 +21,7 @@
         <tbody>
         {% for i in db %}
         <tr>
-            <td><a href="/admin/database/datasheet/{{ i.id }}/change">{{ i.id }}</a></td>
+            <td><a href="/admin/database/datasheet/{{ i.id }}/change">{{ i.value }}</a></td>
             <td>{{ i.des }}</td>
             <td>{{ i.field }}</td>
             <td><a href="/media/{{ i.file }}">{{ i.file }}</a></td>
