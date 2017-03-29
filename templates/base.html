@@ -26,6 +26,19 @@
         a:hover { text-decoration: none;color:red;}	/* 鼠标指针移动到链接上 */
         a:active {text-decoration: none;color:green;}	/* 正在被点击的链接 */
         strong{color: darkred}
+        #nav{
+            overflow: hidden;
+        }
+        #nav li{
+            display: inline-block;
+            font-size: 24px;
+            width: 210px;
+
+        }
+        #nav li a{
+
+        }
+
     </style>
 </head>
 <body style="padding:0px; margin:0px; background-color:#fff;font-family:Arial,sans-serif,arial,helvetica,verdana">
@@ -36,16 +49,17 @@
     <div class="container">
 
         <h1 style="font-size: 40px;font-weight: bolder">BananaLife</h1>
-        <ul >
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Project</a></li>
-            <li><a href="#">Database</a></li>
-            <li><a href="#">blog</a></li>
-            <li><a href="#">wiki</a></li>
-        </ul>
-        <ol class="breadcrumb" style="font-weight: bolder">
-            <li><a href="#" class="active">Home</a></li>
-        </ol>
+        <div style="background-color: gainsboro">
+            <ul id="nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Project</a></li>
+                <li><a href="#">Database</a></li>
+                <li><a href="#">blog</a></li>
+                <li><a href="#">wiki</a></li>
+            </ul>
+        </div>
+
+
     </div>
 
 {% endblock %}
