@@ -4,15 +4,15 @@ from django.db import models
 
 choice=(
 
-    ('1','anolog'),
+    ('analog','analog'),
 
-    ('1','logic'),
+    ('logic','logic'),
 
-    ('2','power'),
+    ('power','power'),
 
-    ('3','storage'),
+    ('storage','storage'),
 
-    ('4','other')
+    ('other','other')
 
 )
 # Create your models here.
