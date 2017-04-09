@@ -20,7 +20,7 @@ import blog.views as blog
 from django.conf import settings
 from django.views.static import serve
 import database.views as db
-
+import weixin.views as wechat
 
 
 
@@ -33,6 +33,6 @@ urlpatterns = [
     url(r'^page/(\d*)', blog.post, name='page'),
     url(r'^db/(\d*)', db.db_index, name='db'),
     url(r'^db111', db.db_test, name='db'),
-    url(r'^media/(?P<path>.*)$',serve,{'document_root': settings.MEDIA_ROOT})
-
+    url(r'^media/(?P<path>.*)$',serve,{'document_root': settings.MEDIA_ROOT}),
+url(r'^weixin/', wechat.weixin, name='weixin'),
 ]
