@@ -11,7 +11,7 @@
                             <a href="/page/{{ post.id }}" ><h2>{{ post.title }}</h2></a>
                             <p style="font-weight: bold" >{{ post.timestamp }}</p>
                             <div ><strong>Viewed:</strong> {{ post.view }}</div>
-                            <div ><strong>Author</strong>:  {{ post.author }}</div>
+                            <div ><strong>Author:</strong>  {{ post.author }}</div>
                             <div style="overflow: hidden;text-overflow:ellipsis;height: 42px;color: darkblue;font-weight:bold;margin: 5px" class="des{{ post.id }}">{{ post.body }}</div>
                             <script type="application/javascript">
                                 var img=$('.des{{ post.id }}').find('img').attr('src');
